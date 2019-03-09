@@ -152,7 +152,9 @@ figure {
 	}
 }
 
-ul, menu, dir {
+.allEle {
 	-webkit-padding-start: 10px;
 }
+
+
 
