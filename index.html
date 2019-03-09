@@ -21,11 +21,8 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 
-<!-- <link rel="stylesheet" href="./css/article.css"> -->
-<!-- <link rel="stylesheet" href="./css/base.css"> -->
-<!-- <link rel="stylesheet" href="./css/mixins.css"> -->
 <link rel="stylesheet" href="./css/style.css">
-<!-- <link rel="stylesheet" href="./css/variables.css"> -->
+
 
 <link rel="stylesheet" href="./ins.css">
 <link rel="stylesheet" href="./photoswipe.css">
@@ -37,6 +34,31 @@
 .pswp__caption__center {
 	text-align: center;	
 }
+.photos {
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    border: 0 solid #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
 </style>
 <script>
 function hasClass(element, cls) {
