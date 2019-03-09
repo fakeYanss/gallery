@@ -55,13 +55,17 @@
         text-align: center;
       }
       .allEle {
-        margin: 10px auto;
-        min-width: 780px;
-        max-width: 980px;
-        width: expression(
-          document.body.clientWidth < 782? "780px": document.body.clientWidth >
-            982? "980px": "auto"
-        );
+        margin: 0px auto;
+      }
+      @media screen and (min-width: 1000px) {
+        .allEle {
+          min-width: 780px;
+          max-width: 980px;
+          width: expression(
+            document.body.clientWidth < 782? "780px": document.body.clientWidth
+              > 982? "980px": "auto"
+          );
+        }
       }
       .img-box-ul {
         margin-top: 10px;
