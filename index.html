@@ -1,114 +1,186 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
+  <head>
+    <title></title>
 
-<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--Author-->
-        <meta name="author" content="Yanss">
+    <meta name="author" content="Yanss" />
 
     <!-- Title -->
     <title>有约如铁</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Custom Fonts -->
-    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link
+      href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-<link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
 
+    <link rel="stylesheet" href="./ins.css" />
+    <link rel="stylesheet" href="./photoswipe.css" />
+    <link rel="stylesheet" href="./default-skin/default-skin.css" />
+    <script type="text/javascript" src="./photoswipe.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./photoswipe-ui-default.min.js"
+    ></script>
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .pswp__caption__center {
+        text-align: center;
+      }
+      .allEle {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .img-box-ul {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 0px;
+      }
+    </style>
+    <script>
+      function setActive(tagName) {
+        if (tagName == "photo") {
+          document.getElementById("photoA").className = "photos-btn active";
+          document.getElementById("gameA").className = "photos-btn";
+          document.getElementById("photoD").style.display = "block";
+          document.getElementById("gameD").style.display = "none";
+        } else {
+          document.getElementById("photoA").className = "photos-btn";
+          document.getElementById("gameA").className = "photos-btn active";
+          document.getElementById("photoD").style.display = "none";
+          document.getElementById("gameD").style.display = "block";
+        }
+      }
+      function hasClass(element, cls) {
+        return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
+      }
 
-<link rel="stylesheet" href="./ins.css">
-<link rel="stylesheet" href="./photoswipe.css">
-<link rel="stylesheet" href="./default-skin/default-skin.css">
-<script type="text/javascript" src="./photoswipe.min.js"></script>
-<script type="text/javascript" src="./photoswipe-ui-default.min.js"></script>
-<style>
-::-webkit-scrollbar {display:none}
-.pswp__caption__center {
-	text-align: center;	
-}
-.allEle {
-    margin-left: 10%;
-    margin-right: 10%;
-}
+      (function() {
+        var loadScript = function(path) {
+          var $script = document.createElement("script");
+          document.getElementsByTagName("body")[0].appendChild($script);
+          $script.setAttribute("src", path);
+        };
+        setTimeout(function() {
+          loadScript("./ins.js");
+        }, 0);
+      })();
+    </script>
+    <script type="text/javascript" src="./toggle.js"></script>
+  </head>
+  <body>
+    <div class="allEle">
+      <div class="photos-btn-wrap">
+        <a
+          class="photos-btn active"
+          id="photoA"
+          href="javascript:void(0)"
+          onclick="setActive('photo')"
+          style="border-bottom:1px #999"
+          >Photo</a
+        ><a
+          class="photos-btn"
+          id="gameA"
+          href="javascript:void(0)"
+          onclick="setActive('game')"
+          style="border-bottom:1px #999"
+          >GameRecord</a
+        >
+      </div>
+      <div class="instagram itemscope" id="photoD">
+        <a href="http://foreti.me" target="_blank" class="open-ins"
+          >图片正在加载中…</a
+        >
+      </div>
 
-</style>
-<script>
-function hasClass(element, cls) {
-    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-}
-	
-(function() {
-var loadScript = function(path) {
-var $script = document.createElement('script')
-document.getElementsByTagName('body')[0].appendChild($script)
-$script.setAttribute('src', path)
-}
-setTimeout(function() {
-loadScript('./ins.js')
-}, 0)
-})()
-</script>
-<script type="text/javascript" src="./toggle.js"></script>
-</head>
-<body>
-	<div class="allEle">
-	<div class="photos-btn-wrap">
-  <a class="photos-btn active" id="photoA" href="javascript:void(0)" onclick="setActive('photo')" style="border-bottom:1px #999">Photo</a><a class="photos-btn" id="gameA" href="javascript:void(0)" onclick="setActive('game')" style="border-bottom:1px #999">GameRecord</a>
-</div>
-<div class="instagram itemscope" id="photoD">
-  <a href="http://foreti.me" target="_blank" class="open-ins">图片正在加载中…</a>
-</div>
-
-<div class="instagram itemscope" id="gameD" style="display: none;">
-  <a href="http://foreti.me" target="_blank" class="open-ins">图片正在加载中…</a>
-</div>
-</div>
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
+      <div class="instagram itemscope" id="gameD" style="display: none;">
+        <a href="http://foreti.me" target="_blank" class="open-ins"
+          >图片正在加载中…</a
+        >
+      </div>
+    </div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
         <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
         </div>
         <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
+            <button
+              class="pswp__button pswp__button--share"
+              title="Share"
+            ></button>
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
+            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
                 </div>
+              </div>
             </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
+          </div>
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
