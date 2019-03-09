@@ -1,73 +1,67 @@
-
 /******/
-(function(modules) { // webpackBootstrap
-    /******/ // The module cache
+(function(modules) {
+  // webpackBootstrap
+  /******/ // The module cache
+  /******/
+  var installedModules = {}; // The require function
+  /******/
+  /******/ /******/
+  function __webpack_require__(moduleId) {
     /******/
-    var installedModules = {};
+    /******/ // Check if module is in cache
     /******/
-    /******/ // The require function
-    /******/
-    function __webpack_require__(moduleId) {
+    if (installedModules[moduleId])
       /******/
-      /******/ // Check if module is in cache
-      /******/
-      if (installedModules[moduleId])
-      /******/
-        return installedModules[moduleId].exports;
-      /******/
-      /******/ // Create a new module (and put it into the cache)
-      /******/
-      var module = installedModules[moduleId] = {
-        /******/
-        exports: {},
-        /******/
-        id: moduleId,
-        /******/
-        loaded: false
-          /******/
-      };
-      /******/
-      /******/ // Execute the module function
-      /******/
-      modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-      /******/
-      /******/ // Flag the module as loaded
-      /******/
-      module.loaded = true;
-      /******/
-      /******/ // Return the exports of the module
-      /******/
-      return module.exports;
-      /******/
-    }
+      return installedModules[moduleId].exports; // Create a new module (and put it into the cache)
     /******/
+    /******/ /******/
+    var module = (installedModules[moduleId] = {
+      /******/
+      exports: {},
+      /******/
+      id: moduleId,
+      /******/
+      loaded: false
+      /******/
+    }); // Execute the module function
     /******/
-    /******/ // expose the modules object (__webpack_modules__)
+    /******/ /******/
+    modules[moduleId].call(
+      module.exports,
+      module,
+      module.exports,
+      __webpack_require__
+    ); // Flag the module as loaded
     /******/
-    __webpack_require__.m = modules;
+    /******/ /******/
+    module.loaded = true; // Return the exports of the module
     /******/
-    /******/ // expose the module cache
+    /******/ /******/
+    return module.exports;
     /******/
-    __webpack_require__.c = installedModules;
-    /******/
-    /******/ // __webpack_public_path__
-    /******/
-    __webpack_require__.p = "/dist/";
-    /******/
-    /******/ // Load entry module and return exports
-    /******/
-    return __webpack_require__(0);
-    /******/
-  })
-
+  } // expose the modules object (__webpack_modules__)
+  /******/
+  /******/
+  /******/ /******/
+  __webpack_require__.m = modules; // expose the module cache
+  /******/
+  /******/ /******/
+  __webpack_require__.c = installedModules; // __webpack_public_path__
+  /******/
+  /******/ /******/
+  __webpack_require__.p = "/dist/"; // Load entry module and return exports
+  /******/
+  /******/ /******/
+  return __webpack_require__(0);
+  /******/
+})(
   /************************************************************************/
   /******/
-  ([
+  [
     /* 0 */
     /***/
     function(module, exports, __webpack_require__) {
-
-      'use strict';
+      "use strict";
 
       __webpack_require__(1);
 
@@ -76,9 +70,11 @@
       var _view2 = _interopRequireDefault(_view);
 
       function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-          default: obj
-        };
+        return obj && obj.__esModule
+          ? obj
+          : {
+              default: obj
+            };
       }
 
       /**
@@ -95,19 +91,21 @@
         var rect = elem.getBoundingClientRect();
         var style = getComputedStyle(elem, null);
 
-        var mask = document.createElement('i');
-        mask.className = 'icon-film';
-        mask.style.color = '#fff';
-        mask.style.fontSize = '26px';
-        mask.style.position = 'absolute';
-        mask.style.right = '10px';
-        mask.style.bottom = '10px';
+        var mask = document.createElement("i");
+        mask.className = "icon-film";
+        mask.style.color = "#fff";
+        mask.style.fontSize = "26px";
+        mask.style.position = "absolute";
+        mask.style.right = "10px";
+        mask.style.bottom = "10px";
         mask.style.zIndex = 1;
         elem.parentNode.appendChild(mask);
       }
 
       var createVideoIncon = function createVideoIncon() {
-        var $videoImg = document.querySelectorAll('.thumb a[data-type="video"]');
+        var $videoImg = document.querySelectorAll(
+          '.thumb a[data-type="video"]'
+        );
         for (var i = 0, len = $videoImg.length; i < len; i++) {
           addMask($videoImg[i]);
         }
@@ -115,51 +113,108 @@
       var render = function render(res, tagName) {
         var ulTmpl = "";
         var figureClass = [];
-            figureClass.push("filter-1977");
-            figureClass.push("filter-aden");
-            figureClass.push("filter-crema");
-            figureClass.push("filter-inkwell");
-            figureClass.push("filter-maven");
-            figureClass.push("filter-moon");
-            figureClass.push("filter-sierra");
-            figureClass.push("filter-rise");
-            figureClass.push("filter-sutro");
-            figureClass.push("filter-valencia");
-            figureClass.push("filter-toaster");
+        figureClass.push("filter-1977");
+        figureClass.push("filter-aden");
+        figureClass.push("filter-amaro");
+        figureClass.push("filter-ashby");
+        figureClass.push("filter-brannan");
+        figureClass.push("filter-charmes");
+        figureClass.push("filter-clarendon");
+        figureClass.push("filter-crema");
+        figureClass.push("filter-dogpatch");
+        figureClass.push("filter-earlybird");
+        figureClass.push("filter-gingham");
+        figureClass.push("filter-ginza");
+        figureClass.push("filter-hefe");
+        figureClass.push("filter-helena");
+        figureClass.push("filter-hudson");
+        figureClass.push("filter-inkwell");
+        figureClass.push("filter-kelvin");
+        figureClass.push("filter-juno");
+        figureClass.push("filter-lark");
+        figureClass.push("filter-lofi");
+        figureClass.push("filter-ludwig");
+        figureClass.push("filter-maven");
+        figureClass.push("filter-mayfair");
+        figureClass.push("filter-moon");
+        figureClass.push("filter-nashville");
+        figureClass.push("filter-perpetua");
+        figureClass.push("filter-poprocket");
+        figureClass.push("filter-reyes");
+        figureClass.push("filter-rise");
+        figureClass.push("filter-sierra");
+        figureClass.push("filter-skyline");
+        figureClass.push("filter-slumber");
+        figureClass.push("filter-xpro-ii");
+        figureClass.push("filter-willow");
+        figureClass.push("filter-walden");
+        figureClass.push("filter-vesper");
+        figureClass.push("filter-valencia");
+        figureClass.push("filter-toaster");
+        figureClass.push("filter-sutro");
+        figureClass.push("filter-stinson");
 
         for (var j = 0, len2 = res.list.length; j < len2; j++) {
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            var minSrc = 'http://photo.yanss.top/min_photos/' + data.link[i];
+            var minSrc = "http://photo.yanss.top/min_photos/" + data.link[i];
             //var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
-            var src = 'http://photo.yanss.top/' + data.link[i];
+            var src = "http://photo.yanss.top/" + data.link[i];
             var type = data.type[i];
-            var target = src + '.' +type;
+            var target = src + "." + type;
             var size = data.size[i];
-            if (type === 'webm' || type === 'mp4') {
-              src = src + '.jpg' + '?imageMogr2/auto-orient';
-              minSrc = minSrc + '.jpg';
-              type = 'video';
+            if (type === "webm" || type === "mp4") {
+              src = src + ".jpg" + "?imageMogr2/auto-orient";
+              minSrc = minSrc + ".jpg";
+              type = "video";
             } else {
-              src = src +  '.' + type + '?imageMogr2/auto-orient';
-              minSrc = minSrc + '.' + type;
-              type = 'image';
-            }            
-            var random = Math.floor((Math.random() * figureClass.length))
+              src = src + "." + type + "?imageMogr2/auto-orient";
+              minSrc = minSrc + "." + type;
+              type = "image";
+            }
+            var random = Math.floor(Math.random() * figureClass.length);
 
-            liTmpl += '<figure class="thumb ' + figureClass[random] + '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-                  <a href="' + src + '" itemprop="contentUrl" data-size="' + size + '" data-type="' + type + '" data-target="' + target + '">\
-                    <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="./assets/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+            liTmpl +=
+              '<figure class="thumb ' +
+              figureClass[random] +
+              '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+                  <a href="' +
+              src +
+              '" itemprop="contentUrl" data-size="' +
+              size +
+              '" data-type="' +
+              type +
+              '" data-target="' +
+              target +
+              '">\
+                    <img class="reward-img" data-type="' +
+              type +
+              '" data-src="' +
+              minSrc +
+              '" src="./assets/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                   </a>\
-                  <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
-              </figure>';
+                  <figcaption style="display:none" itemprop="caption description">' +
+              data.text[i] +
+              "</figcaption>\
+              </figure>";
           }
-          ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '年<em>' + data.month + '月</em></h1>\
-          <ul class="img-box-ul">' + liTmpl + '</ul>\
-          </section>';
+          ulTmpl =
+            ulTmpl +
+            '<section class="archives album"><h1 class="year">' +
+            data.year +
+            "年<em>" +
+            data.month +
+            '月</em></h1>\
+          <ul class="img-box-ul">' +
+            liTmpl +
+            "</ul>\
+          </section>";
         }
-        document.getElementById(tagName).innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
+        document.getElementById(tagName).innerHTML =
+          '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' +
+          ulTmpl +
+          "</div>";
         createVideoIncon();
         _view2.default.init();
       };
@@ -196,7 +251,7 @@
       function loadData(success, file) {
         if (!searchData) {
           var xhr = new XMLHttpRequest();
-          xhr.open('GET', './' + file + '?t=' + +new Date(), true);
+          xhr.open("GET", "./" + file + "?t=" + +new Date(), true);
 
           xhr.onload = function() {
             if (this.status >= 200 && this.status < 300) {
@@ -221,11 +276,11 @@
       var Ins = {
         init: function init() {
           loadData(function(data) {
-            render(data,'photoD');
-          }, 'photo.json');
+            render(data, "photoD");
+          }, "photo.json");
           loadData(function(data) {
-            render(data,'gameD');
-          }, 'game.json');
+            render(data, "gameD");
+          }, "game.json");
         }
       };
 
@@ -238,20 +293,19 @@
     /* 1 */
     /***/
     function(module, exports, __webpack_require__) {
-
       /* WEBPACK VAR INJECTION */
       (function(global) {
-        'use strict';
+        "use strict";
 
         var inViewport = __webpack_require__(3);
-        var lazyAttrs = ['data-src'];
+        var lazyAttrs = ["data-src"];
 
         global.lzld = lazyload();
 
         // Provide libs using getAttribute early to get the good src
         // and not the fake data-src
-        replaceGetAttribute('Image');
-        replaceGetAttribute('IFrame');
+        replaceGetAttribute("Image");
+        replaceGetAttribute("IFrame");
 
         function registerLazyAttr(attr) {
           if (indexOf.call(lazyAttrs, attr) === -1) {
@@ -260,14 +314,17 @@
         }
 
         function lazyload(opts) {
-            //console.log("lazyload")
-          opts = merge({
-            'offset': 333,
-            'src': 'data-src',
-            'container': false
-          }, opts || {});
+          //console.log("lazyload")
+          opts = merge(
+            {
+              offset: 333,
+              src: "data-src",
+              container: false
+            },
+            opts || {}
+          );
 
-          if (typeof opts.src === 'string') {
+          if (typeof opts.src === "string") {
             registerLazyAttr(opts.src);
           }
 
@@ -280,12 +337,12 @@
               elt.src = src;
             }
 
-            elt.setAttribute('data-lzled', true);
+            elt.setAttribute("data-lzled", true);
             elts[indexOf.call(elts, elt)] = null;
           }
 
           function findRealSrc(elt) {
-            if (typeof opts.src === 'function') {
+            if (typeof opts.src === "function") {
               return opts.src(elt);
             }
 
@@ -294,9 +351,9 @@
 
           function register(elt) {
             elt.onload = null;
-            elt.removeAttribute('onload');
+            elt.removeAttribute("onload");
             elt.onerror = null;
-            elt.removeAttribute('onerror');
+            elt.removeAttribute("onerror");
 
             if (indexOf.call(elts, elt) === -1) {
               inViewport(elt, opts, show);
@@ -307,14 +364,14 @@
         }
 
         function replaceGetAttribute(elementName) {
-          var fullname = 'HTML' + elementName + 'Element';
+          var fullname = "HTML" + elementName + "Element";
           if (fullname in global === false) {
             return;
           }
 
           var original = global[fullname].prototype.getAttribute;
           global[fullname].prototype.getAttribute = function(name) {
-            if (name === 'src') {
+            if (name === "src") {
               var realSrc;
               for (var i = 0, max = lazyAttrs.length; i < max; i++) {
                 realSrc = original.call(this, lazyAttrs[i]);
@@ -344,7 +401,7 @@
 
         // http://webreflection.blogspot.fr/2011/06/partial-polyfills.html
         function indexOf(value) {
-          for (var i = this.length; i-- && this[i] !== value;) {}
+          for (var i = this.length; i-- && this[i] !== value; ) {}
           return i;
         }
 
@@ -352,35 +409,42 @@
 
         // export default impush;
         /* WEBPACK VAR INJECTION */
-      }.call(exports, (function() {
-        return this;
-      }())))
+      }.call(
+        exports,
+        (function() {
+          return this;
+        })()
+      ));
 
       /***/
     },
     /* 2 */
     /***/
     function(module, exports) {
-
-      'use strict';
+      "use strict";
 
       // hard code, 获取第一个gallery的图片数
       function picCount() {
         var count = 0;
-        var sections = document.getElementById("photoD").getElementsByTagName("section");
+        var sections = document
+          .getElementById("photoD")
+          .getElementsByTagName("section");
         for (var i = 0; i < sections.length; i++) {
-          count += sections[i].getElementsByTagName("ul")[0].getElementsByTagName("figure").length;
+          count += sections[i]
+            .getElementsByTagName("ul")[0]
+            .getElementsByTagName("figure").length;
         }
         return count;
       }
 
-      var initPhotoSwipeFromDOM = function initPhotoSwipeFromDOM(gallerySelector) {
-
+      var initPhotoSwipeFromDOM = function initPhotoSwipeFromDOM(
+        gallerySelector
+      ) {
         // parse slide data (url, title, size ...) from DOM elements
         // (children of gallerySelector)
         var parseThumbnailElements = function parseThumbnailElements(el) {
           el = el.parentNode.parentNode;
-          var thumbElements = el.getElementsByClassName('thumb'),
+          var thumbElements = el.getElementsByClassName("thumb"),
             numNodes = thumbElements.length,
             items = [],
             figureEl,
@@ -392,7 +456,6 @@
             item;
 
           for (var i = 0; i < numNodes; i++) {
-
             figureEl = thumbElements[i]; //
 
             // include only element nodes
@@ -402,12 +465,12 @@
 
             linkEl = figureEl.children[0]; //
 
-            size = linkEl.getAttribute('data-size').split('x');
-            type = linkEl.getAttribute('data-type');
-            target = linkEl.getAttribute('data-target');
+            size = linkEl.getAttribute("data-size").split("x");
+            type = linkEl.getAttribute("data-type");
+            target = linkEl.getAttribute("data-target");
             // create slide object
             item = {
-              src: linkEl.getAttribute('href'),
+              src: linkEl.getAttribute("href"),
               w: parseInt(size[0], 10),
               h: parseInt(size[1], 10)
             };
@@ -417,11 +480,14 @@
             }
 
             if (linkEl.children.length > 0) {
-              item.msrc = linkEl.children[0].getAttribute('src');
+              item.msrc = linkEl.children[0].getAttribute("src");
               item.type = type;
               item.target = target;
-              item.html = '<video src="' + target + '" controls="controls" autoplay="autoplay"></video>';
-              if (type === 'video') {
+              item.html =
+                '<video src="' +
+                target +
+                '" controls="controls" autoplay="autoplay"></video>';
+              if (type === "video") {
                 //item.src = null;
               }
             }
@@ -441,13 +507,13 @@
         // triggers when user clicks on thumbnail
         var onThumbnailsClick = function onThumbnailsClick(e) {
           e = e || window.event;
-          e.preventDefault ? e.preventDefault() : e.returnValue = false;
+          e.preventDefault ? e.preventDefault() : (e.returnValue = false);
 
           var eTarget = e.target || e.srcElement;
 
           // find root element of slide
           var clickedListItem = closest(eTarget, function(el) {
-            return el.tagName && el.tagName.toUpperCase() === 'FIGURE';
+            return el.tagName && el.tagName.toUpperCase() === "FIGURE";
           });
 
           if (!clickedListItem) {
@@ -457,10 +523,9 @@
           // find index of clicked item by looping through all child nodes
           // alternatively, you may define index via data- attribute
           var clickedGallery = clickedListItem.parentNode,
-
             // childNodes = clickedListItem.parentNode.childNodes,
             // numChildNodes = childNodes.length,
-            childNodes = document.getElementsByClassName('thumb'),
+            childNodes = document.getElementsByClassName("thumb"),
             numChildNodes = childNodes.length,
             nodeIndex = 0,
             index;
@@ -493,12 +558,12 @@
             return params;
           }
 
-          var vars = hash.split('&');
+          var vars = hash.split("&");
           for (var i = 0; i < vars.length; i++) {
             if (!vars[i]) {
               continue;
             }
-            var pair = vars[i].split('=');
+            var pair = vars[i].split("=");
             if (pair.length < 2) {
               continue;
             }
@@ -512,9 +577,13 @@
           return params;
         };
 
-
-        var openPhotoSwipe = function openPhotoSwipe(index, galleryElement, disableAnimation, fromURL) {
-          var pswpElement = document.querySelectorAll('.pswp')[0],
+        var openPhotoSwipe = function openPhotoSwipe(
+          index,
+          galleryElement,
+          disableAnimation,
+          fromURL
+        ) {
+          var pswpElement = document.querySelectorAll(".pswp")[0],
             gallery,
             options,
             items;
@@ -523,15 +592,15 @@
 
           // define options (if needed)
           options = {
-
             // define gallery index (for URL)
-            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+            galleryUID: galleryElement.getAttribute("data-pswp-uid"),
 
             getThumbBoundsFn: function getThumbBoundsFn(index) {
               // See Options -> getThumbBoundsFn section of documentation for more info
-              var thumbnail = items[index].el.getElementsByTagName('img')[0],
+              var thumbnail = items[index].el.getElementsByTagName("img")[0],
                 // find thumbnail
-                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                pageYScroll =
+                  window.pageYOffset || document.documentElement.scrollTop,
                 rect = thumbnail.getBoundingClientRect();
 
               return {
@@ -540,7 +609,6 @@
                 w: rect.width
               };
             }
-
           };
 
           // PhotoSwipe opened from URL
@@ -560,7 +628,7 @@
             }
           } else {
             if (hasClass(document.getElementById("photoA"), "active")) {
-              options.index = parseInt(index, 10);  
+              options.index = parseInt(index, 10);
             } else {
               options.index = parseInt(index, 10) - picCount();
             }
@@ -576,7 +644,12 @@
           }
 
           // Pass data to PhotoSwipe and initialize it
-          gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+          gallery = new PhotoSwipe(
+            pswpElement,
+            PhotoSwipeUI_Default,
+            items,
+            options
+          );
           gallery.init();
 
           var $tempVideo;
@@ -589,48 +662,53 @@
           var changeHandle = function changeHandle() {
             var item = gallery.currItem;
             stopVideoHandle();
-            if (item.type === 'video') {
+            if (item.type === "video") {
               var $ctn = item.container;
-              var style = $ctn.getElementsByClassName('pswp__img')[0].style;
-              var $video = document.createElement('video');
-              $video.setAttribute('autoplay', 'autoplay');
-              $video.setAttribute('controls', 'controls');
-              $video.setAttribute('src', item.target);
+              var style = $ctn.getElementsByClassName("pswp__img")[0].style;
+              var $video = document.createElement("video");
+              $video.setAttribute("autoplay", "autoplay");
+              $video.setAttribute("controls", "controls");
+              $video.setAttribute("src", item.target);
               $video.style.width = style.width;
               $video.style.height = style.height;
-              $video.style.position = 'absolute';
+              $video.style.position = "absolute";
               $video.style.zIndex = 2;
               $tempVideo = $video;
               $ctn.appendChild($video);
             }
           };
-          gallery.listen('initialZoomIn', changeHandle);
-          gallery.listen('afterChange', changeHandle);
-          gallery.listen('initialZoomOut', stopVideoHandle);
+          gallery.listen("initialZoomIn", changeHandle);
+          gallery.listen("afterChange", changeHandle);
+          gallery.listen("initialZoomOut", stopVideoHandle);
         };
 
         // loop through all gallery elements and bind events
         var galleryElements = document.querySelectorAll(gallerySelector);
         for (var i = 0, l = galleryElements.length; i < l; i++) {
-          galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+          galleryElements[i].setAttribute("data-pswp-uid", i + 1);
           galleryElements[i].onclick = onThumbnailsClick;
         }
 
         // Parse URL and open gallery if it contains #&pid=3&gid=1
         var hashData = photoswipeParseHash();
         if (hashData.pid && hashData.gid) {
-          openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+          openPhotoSwipe(
+            hashData.pid,
+            galleryElements[hashData.gid - 1],
+            true,
+            true
+          );
         }
       };
 
-      var Viewer = function() {
+      var Viewer = (function() {
         function init() {
-          initPhotoSwipeFromDOM('.photos');
+          initPhotoSwipeFromDOM(".photos");
         }
         return {
           init: init
         };
-      }();
+      })();
 
       module.exports = Viewer;
 
@@ -639,13 +717,13 @@
     /* 3 */
     /***/
     function(module, exports) {
-
       /* WEBPACK VAR INJECTION */
       (function(global) {
         module.exports = inViewport;
 
         var instances = [];
-        var supportsMutationObserver = typeof global.MutationObserver === 'function';
+        var supportsMutationObserver =
+          typeof global.MutationObserver === "function";
 
         function inViewport(elt, params, cb) {
           var opts = {
@@ -653,13 +731,13 @@
             offset: 0
           };
 
-          if (params === undefined || typeof params === 'function') {
+          if (params === undefined || typeof params === "function") {
             cb = params;
             params = {};
           }
 
-          var container = opts.container = params.container || opts.container;
-          var offset = opts.offset = params.offset || opts.offset;
+          var container = (opts.container = params.container || opts.container);
+          var offset = (opts.offset = params.offset || opts.offset);
 
           for (var i = 0; i < instances.length; i++) {
             if (instances[i].container === container) {
@@ -674,7 +752,7 @@
 
         function addEvent(el, type, fn) {
           if (el.attachEvent) {
-            el.attachEvent('on' + type, fn);
+            el.attachEvent("on" + type, fn);
           } else {
             el.addEventListener(type, fn, false);
           }
@@ -702,34 +780,35 @@
           if (!global.document) {
             return true;
           }
-          return global.document.documentElement.compareDocumentPosition ?
-            function(a, b) {
-              return !!(a.compareDocumentPosition(b) & 16);
-            } :
-            global.document.documentElement.contains ?
-            function(a, b) {
-              return a !== b && (a.contains ? a.contains(b) : false);
-            } :
-            function(a, b) {
-              while (b = b.parentNode) {
-                if (b === a) {
-                  return true;
-                }
+          return global.document.documentElement.compareDocumentPosition
+            ? function(a, b) {
+                return !!(a.compareDocumentPosition(b) & 16);
               }
-              return false;
-            };
-        }
+            : global.document.documentElement.contains
+            ? function(a, b) {
+                return a !== b && (a.contains ? a.contains(b) : false);
+              }
+            : function(a, b) {
+                while ((b = b.parentNode)) {
+                  if (b === a) {
+                    return true;
+                  }
+                }
+                return false;
+              };
+        };
 
         function createInViewport(container) {
           var watches = createWatches();
 
-          var scrollContainer = container === global.document.body ? global : container;
+          var scrollContainer =
+            container === global.document.body ? global : container;
           var debouncedCheck = debounce(watches.checkAll(watchInViewport), 15);
 
-          addEvent(scrollContainer, 'scroll', debouncedCheck);
+          addEvent(scrollContainer, "scroll", debouncedCheck);
 
           if (scrollContainer === global) {
-            addEvent(global, 'resize', debouncedCheck);
+            addEvent(global, "resize", debouncedCheck);
           }
 
           if (supportsMutationObserver) {
@@ -775,7 +854,10 @@
           }
 
           function isVisible(elt, offset) {
-            if (!contains(global.document.documentElement, elt) || !contains(global.document.documentElement, container)) {
+            if (
+              !contains(global.document.documentElement, elt) ||
+              !contains(global.document.documentElement, container)
+            ) {
               return false;
             }
 
@@ -807,12 +889,10 @@
 
             // The element must overlap with the visible part of the viewport
             var visible =
-              (
-                (eltRect.right > viewport.left) &&
-                (eltRect.left < viewport.right) &&
-                (eltRect.bottom > viewport.top) &&
-                (eltRect.top < viewport.bottom)
-              );
+              eltRect.right > viewport.left &&
+              eltRect.left < viewport.right &&
+              eltRect.bottom > viewport.top &&
+              eltRect.top < viewport.bottom;
 
             return visible;
           }
@@ -889,7 +969,8 @@
           }
 
           function knownNodes(mutation) {
-            var nodes = concat.call([],
+            var nodes = concat.call(
+              [],
               Array.prototype.slice.call(mutation.addedNodes),
               mutation.target
             );
@@ -898,11 +979,15 @@
         }
 
         /* WEBPACK VAR INJECTION */
-      }.call(exports, (function() {
-        return this;
-      }())))
+      }.call(
+        exports,
+        (function() {
+          return this;
+        })()
+      ));
 
       /***/
     }
     /******/
-  ]);
+  ]
+);
