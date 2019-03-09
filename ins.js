@@ -355,7 +355,7 @@
         var count = 0;
         var sections = document.getElementById("photoD").getElementsByTagName("section");
         for (var i = 0; i < sections.length; i++) {
-          count += sections[0].childElementCount;
+          count += sections[i].childElementCount;
         }
         return count;
       }
