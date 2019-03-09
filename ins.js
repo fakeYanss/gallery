@@ -353,7 +353,7 @@
       // hard code, 获取第一个gallery的图片数
       function picCount() {
         var count = 0;
-        var sections = document.getElementById("photoD").children().find("section");
+        var sections = document.getElementById("photoD").getElementsByTagName("section");
         for (var i = 0; i < sections.length; i++) {
           count += sections.eq(i).find("ul").children().length;
         }
