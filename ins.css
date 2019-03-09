@@ -131,7 +131,7 @@ figure {
   margin-bottom: -4px;
   padding: 5px 8px 3px;
 }
-.photos-btn .active {
+.photos-btn.active {
   color: #08c;
   border: 1px solid #e5e5e5;
   border-bottom: 5px solid #fff;
@@ -157,7 +157,8 @@ figure {
 
 /* instagram nav content */
 /*! CSS Used from: Embedded */
-.fx7hk a,
+.fx7hk,
+a,
 div,
 span {
   margin: 0;
@@ -167,7 +168,7 @@ span {
   vertical-align: baseline;
 }
 /*! CSS Used from: Embedded */
-/* div {
+div {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
@@ -190,14 +191,14 @@ span {
   margin: 0;
   padding: 0;
   position: relative;
-} */
+}
 /*! CSS Used from: Embedded */
-.fx7hk a,
+a,
 a:visited {
   color: #003569;
   text-decoration: none;
 }
-.fx7hk a:active {
+a:active {
   opacity: 0.5;
 }
 /*! CSS Used from: Embedded */

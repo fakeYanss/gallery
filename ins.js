@@ -627,7 +627,7 @@
               options.index = parseInt(index, 10) - 1;
             }
           } else {
-            if (hasClass(document.getElementById("photoA"), "active")) {
+            if (hasClass(document.getElementById("photoA"), "T-jvg")) {
               options.index = parseInt(index, 10);
             } else {
               options.index = parseInt(index, 10) - picCount();
