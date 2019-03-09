@@ -10,6 +10,13 @@
 <script type="text/javascript" src="./photoswipe-ui-default.min.js"></script>
 <style>
 ::-webkit-scrollbar {display:none}
+
+margin: 10px auto;
+
+min-width: 780px;
+max-width: 1260px;
+
+width:expression(document.body.clientWidth < 782? "780px" : document.body.clientWidth > 1262? "1260px" : "auto");
 </style>
 <script>
 (function() {
