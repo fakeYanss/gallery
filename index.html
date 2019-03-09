@@ -11,12 +11,13 @@
 <style>
 ::-webkit-scrollbar {display:none}
 
-margin: 10px auto;
-
+.allEle {
+	margin: 10px auto;
 min-width: 780px;
 max-width: 1260px;
-
 width:expression(document.body.clientWidth < 782? "780px" : document.body.clientWidth > 1262? "1260px" : "auto");
+}
+
 </style>
 <script>
 (function() {
@@ -33,6 +34,7 @@ loadScript('./ins.js')
 <script type="text/javascript" src="./toggle.js"></script>
 </head>
 <body>
+	<div class="allEle">
 	<div class="photos-btn-wrap">
   <a class="photos-btn active" id="photoA" href="javascript:void(0)" onclick="setActive('photo')" style="border-bottom:1px #999">Photo</a><a class="photos-btn" id="gameA" href="javascript:void(0)" onclick="setActive('game')" style="border-bottom:1px #999">GameRecord</a>
 </div>
@@ -42,6 +44,7 @@ loadScript('./ins.js')
 
 <div class="instagram itemscope" id="gameD" style="display: none;">
   <a href="http://foreti.me" target="_blank" class="open-ins">图片正在加载中…</a>
+</div>
 </div>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
   <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
