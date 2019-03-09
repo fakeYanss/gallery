@@ -355,10 +355,8 @@
         var count = 0;
         var sections = document.getElementById("photoD").getElementsByTagName("section");
         for (var i = 0; i < sections.length; i++) {
-          count += sections[i].childElementCount;
-          console.log(sections[i].childElementCount);
+          count += sections[i].getElementsByTagName("ul")[0].getElementsByTagName("figure").length;
         }
-        console.log(count);
         return count;
       }
 
