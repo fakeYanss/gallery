@@ -114,6 +114,19 @@
       };
       var render = function render(res, tagName) {
         var ulTmpl = "";
+        var figureClass = [];
+            figureClass.push("filter-1977");
+            figureClass.push("filter-aden");
+            figureClass.push("filter-crema");
+            figureClass.push("filter-inkwell");
+            figureClass.push("filter-maven");
+            figureClass.push("filter-moon");
+            figureClass.push("filter-sierra");
+            figureClass.push("filter-rise");
+            figureClass.push("filter-sutro");
+            figureClass.push("filter-valencia");
+            figureClass.push("filter-toaster");
+
         for (var j = 0, len2 = res.list.length; j < len2; j++) {
           var data = res.list[j].arr;
           var liTmpl = "";
@@ -132,9 +145,10 @@
               src = src +  '.' + type + '?imageMogr2/auto-orient';
               minSrc = minSrc + '.' + type;
               type = 'image';
-            }
+            }            
+            var random = Math.floor((Math.random() * figureClass.length))
 
-            liTmpl += '<figure class="thumb filter-willow" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+            liTmpl += '<figure class="thumb ' + figureClass[random] + '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' + src + '" itemprop="contentUrl" data-size="' + size + '" data-type="' + type + '" data-target="' + target + '">\
                     <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="./assets/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                   </a>\
