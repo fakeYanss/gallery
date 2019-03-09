@@ -545,7 +545,7 @@
               options.index = parseInt(index, 10) - 1;
             }
           } else {
-            if (document.getElementById("photoA").hasClass("active")) {
+            if (hasClass(document.getElementById("photoA"), "active")) {
               options.index = parseInt(index, 10);  
             } else {
               options.index = parseInt(index, 10) - picCount();

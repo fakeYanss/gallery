@@ -15,6 +15,10 @@
 }
 </style>
 <script>
+function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+	
 (function() {
 var loadScript = function(path) {
 var $script = document.createElement('script')
