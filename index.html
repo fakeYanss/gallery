@@ -17,6 +17,11 @@ min-width: 780px;
 max-width: 1260px;
 width:expression(document.body.clientWidth < 782? "780px" : document.body.clientWidth > 1262? "1260px" : "auto");
 }
+.pswp__caption__center {
+display: inline;
+	text-align: center;	
+}
+
 
 </style>
 <script>
@@ -80,9 +85,7 @@ loadScript('./ins.js')
             <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
             </button>
             <div class="pswp__caption">
-                <div>
-                	<p class="pswp__caption__center"></p>
-                </div>
+                <div class="pswp__caption__center"></div>
             </div>
         </div>
     </div>
