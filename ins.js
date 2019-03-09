@@ -358,7 +358,7 @@
           count += sections[i].childElementCount;
           console.log(sections[i].childElementCount);
         }
-        cosole.log(count);
+        console.log(count);
         return count;
       }
 
