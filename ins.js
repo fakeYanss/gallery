@@ -353,7 +353,7 @@
       // hard code, 获取第一个gallery的图片数
       function picCount() {
         var count = 0;
-        var sections = $("#photoD").children().find("section");
+        var sections = document.getElementById("photoD").children().find("section");
         for (var i = 0; i < sections.length; i++) {
           count += sections.eq(i).find("ul").children().length;
         }
@@ -545,7 +545,7 @@
               options.index = parseInt(index, 10) - 1;
             }
           } else {
-            if ($("#photoA").hasClass("active")) {
+            if (document.getElementById("photoA").hasClass("active")) {
               options.index = parseInt(index, 10);  
             } else {
               options.index = parseInt(index, 10) - picCount();
