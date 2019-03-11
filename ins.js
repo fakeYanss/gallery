@@ -173,11 +173,12 @@
               minSrc = minSrc + "." + type;
               type = "image";
             }
-            var random = Math.floor(Math.random() * figureClass.length);
+            // var random = Math.floor(Math.random() * figureClass.length);
+            // I like 'willow' now.
 
             liTmpl +=
               '<figure class="thumb ' +
-              figureClass[random] +
+              figureClass[33] +
               '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' +
               src +
