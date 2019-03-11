@@ -228,7 +228,7 @@ a:active {
 }
 .fx7hk {
   border-top: 1px solid #efefef;
-  /* margin-top: 10px; */
+  /* margin-top: 10px; 将会造成图片标题下移被遮罩*/ 
 }
 /*! CSS Used from: Embedded */
 a._9VEo1,
