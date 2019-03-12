@@ -158,9 +158,15 @@
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            var minSrc = "http://photo.yanss.top/min_photos/" + data.link[i];
-            //var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
-            var src = "http://photo.yanss.top/" + data.link[i];
+            // var minSrc = "http://photo.yanss.top/min_photos/" + data.link[i];
+            // var src = "http://photo.yanss.top/" + data.link[i];
+            if (tagName == 'photoD') {
+              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/photo/min_pic/" + data.link[i];
+              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/photo/pic/' + data.link[i];
+            } else {
+              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/game/min_pic/" + data.link[i];
+              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/game/pic/' + data.link[i];
+            }
             var type = data.type[i];
             var target = src + "." + type;
             var size = data.size[i];
@@ -252,8 +258,8 @@
       function loadData(success, file) {
         if (!searchData) {
           var xhr = new XMLHttpRequest();
-          xhr.open("GET", "./" + file + "?t=" + +new Date(), true);
-
+          // xhr.open("GET", "./" + file + "?t=" + +new Date(), true);
+          xhr.open("GET", "https://raw.githubusercontent.com/fakeYanss/gallery/source/" + file + "?t=" + new Date(), true);
           xhr.onload = function() {
             if (this.status >= 200 && this.status < 300) {
               var res = JSON.parse(this.response);
