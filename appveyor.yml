@@ -26,7 +26,6 @@ on_success:
   # - copy /Y game.json %TEMP%\static-site\
   # - copy /Y photo.json %TEMP%\static-site\
   # - cd %TEMP%\static-site
-  - git revert HEAD
   - git add -A
   - git commit -m "Update Static Site"
   - git push origin %TARGET_BRANCH%
