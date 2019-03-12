@@ -45,7 +45,7 @@ def list_img_file(directory):
                 if fileformat.lower() == "mp4" or fileformat.lower() == "webm":
                     new_list.remove(name + '.jpg')
                     new_list.append(filename)
-    print(new_list)
+    # print(new_list)
     return new_list
 
 
