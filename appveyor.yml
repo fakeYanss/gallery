@@ -6,6 +6,9 @@ environment:
   matrix:
     - PYTHON: "C:\\Python36-x64"
 
+skip_commits:
+  message: /Update Static Site/
+
 install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python --version
