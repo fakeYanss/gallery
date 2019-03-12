@@ -75,7 +75,8 @@ def generateThumbnail(src_dir, des_dir):
             copy = im.crop(get_crop_region(im.size[0], im.size[1]))
             copy.thumbnail((600, 600))
             copy.save(des_dir+infile, 'JPEG')
-            print("successfully compress " + infile.encode("utf-8"))
+            print("successfully compress")
+            # print("successfully compress " + infile) # appveyor编码utf8报错
 
 if __name__ == '__main__':
     generateThumbnail('photo/pic/', 'photo/min_pic/')
