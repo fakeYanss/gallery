@@ -17,7 +17,7 @@
 
 * **图片仅支持jpg格式**。
 
-* 添加新图片之前记得 `git pull`，因为appveyor会将压缩的图片和json文件重新push到source分支，这样远程库会领先本地库一个版本。
+* 添加新图片之前记得 `git pull` 或 `git rebase`，因为appveyor会将压缩的图片和json文件重新push到source分支，这样远程库会领先本地库一个版本。
 
 * 新图片前加`new_`前缀，作为标记，compress.py脚本只压缩有`new_`前缀的图片，压缩完后会自动改名去掉前缀。
 

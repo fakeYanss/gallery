@@ -8,7 +8,6 @@ environment:
 
 skip_commits:
   message: /Update Static Site/
-  author: fakeYanss
 
 install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
