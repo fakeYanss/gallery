@@ -17,8 +17,8 @@ build_script:
   - git clone --depth 5 -q --branch=%TARGET_BRANCH% %STATIC_SITE_REPO%
   - cd %STATIC_SITE_REPO%
   - if [ "`ls photo/pic/`" != "" ]; then
-  - %PYTHON%\\python.exe compress.py
-  - %PYTHON%\\python.exe make-json.py
+  - "%PYTHON%\\python.exe compress.py"
+  - "%PYTHON%\\python.exe make-json.py"
 
 on_success:
   - git add -A
