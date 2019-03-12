@@ -55,6 +55,7 @@ def list_img_file(directory):
         name, fileformat = filename.split(".")
         if name.startswith('new_') and fileformat.lower() == "jpg":
             # if fileformat.lower() == "jpg" or fileformat.lower() == "png" or fileformat.lower() == "gif":
+            os.rename(directory + filename, directory + filename.strip('new_'))
             filename = filename.strip('new_')
             new_list.append(filename)
     # print new_list

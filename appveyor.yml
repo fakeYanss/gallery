@@ -12,8 +12,6 @@ init:
 install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python --version
-  # - python -m pip install -U pip
-  # - python -m easy_install -U setuptools
   - pip install Pillow
   - pip install opencv-python
 
@@ -22,7 +20,6 @@ build_script:
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
   - git config --global user.email "%GIT_USER_EMAIL%"
   - git config --global user.name "%GIT_USER_NAME%"
-  # - git clone --depth 5 -q --branch=%TARGET_BRANCH% %STATIC_SITE_REPO%
   - cd C:\projects\gallery
   - python compress.py
   - python make-json.py
