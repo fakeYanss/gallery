@@ -60,7 +60,7 @@ def handle_photo(src_dir, target_file):
     list_info = []
     for i in range(len(file_list)):
         filename = file_list[i]
-        print(filename)
+        # print(filename)
         date_str, info = filename.split("_")
         info, _type = info.split(".")
         date = datetime.strptime(date_str, "%Y-%m-%d")
