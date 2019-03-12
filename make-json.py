@@ -109,7 +109,7 @@ def handle_photo(src_dir, target_file):
     with open(target_file, "w") as fp:
         json.dump(final_dict, fp, indent=4, separators=(',', ': '))
     with open(target_file, "r") as fp:
-        print (json.load(fp).encode("utf-8"))
+        # print (json.load(fp)) # appveyor上进行打印会由于utf8发生编码错误
 
 if __name__ == "__main__":
     handle_photo('photo/pic/', 'photo.json')
