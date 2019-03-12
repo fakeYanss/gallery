@@ -27,7 +27,7 @@ on_success:
   # - cd %TEMP%\static-site
   - git add -A
   - git commit -m "Update Static Site"
-  - git checkout master
+  - git checkout source
   - git push origin %TARGET_BRANCH%
   - git branch -v
   - git log -1
