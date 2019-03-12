@@ -60,7 +60,7 @@ def handle_photo(src_dir, target_file):
     list_info = []
     for i in range(len(file_list)):
         filename = file_list[i]
-        # print(filename)
+        print(filename.encode("utf-8"))
         date_str, info = filename.split("_")
         info, _type = info.split(".")
         date = datetime.strptime(date_str, "%Y-%m-%d")
@@ -109,7 +109,7 @@ def handle_photo(src_dir, target_file):
     with open(target_file, "w") as fp:
         json.dump(final_dict, fp, indent=4, separators=(',', ': '))
     with open(target_file, "r") as fp:
-        print (json.load(fp))
+        print (json.load(fp).encode("utf-8"))
 
 if __name__ == "__main__":
     handle_photo('photo/pic/', 'photo.json')

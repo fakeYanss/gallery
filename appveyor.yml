@@ -12,8 +12,8 @@ init:
 install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python --version
-  - python -m pip install -U pip
-  - python -m easy_install -U setuptools
+  # - python -m pip install -U pip
+  # - python -m easy_install -U setuptools
   - pip install Pillow
   - pip install opencv-python
 
