@@ -161,21 +161,23 @@
             // var minSrc = "http://photo.yanss.top/min_photos/" + data.link[i];
             // var src = "http://photo.yanss.top/" + data.link[i];
             if (tagName == 'photoD') {
-              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/photo/min_pic/" + data.link[i];
-              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/photo/pic/' + data.link[i];
+              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/source/photo/min_pic/" + data.link[i];
+              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/source/photo/pic/' + data.link[i];
             } else {
-              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/game/min_pic/" + data.link[i];
-              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/game/pic/' + data.link[i];
+              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/source/game/min_pic/" + data.link[i];
+              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/source/game/pic/' + data.link[i];
             }
             var type = data.type[i];
             var target = src + "." + type;
             var size = data.size[i];
             if (type === "webm" || type === "mp4") {
-              src = src + ".jpg" + "?imageMogr2/auto-orient";
+              // src = src + ".jpg" + "?imageMogr2/auto-orient";
+              src = src + ".jpg";
               minSrc = minSrc + ".jpg";
               type = "video";
             } else {
-              src = src + "." + type + "?imageMogr2/auto-orient";
+              // src = src + "." + type + "?imageMogr2/auto-orient";
+              src = src + "." + type;
               minSrc = minSrc + "." + type;
               type = "image";
             }
