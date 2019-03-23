@@ -112,6 +112,20 @@
         }, 0);
       })();
     </script>
+    <script type="module">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("asset/sw.js")
+          .then(function() {
+            console.log("A new service worker is being installed.");
+          })
+          .catch(function(error) {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
   </head>
   <body>
     <div style="margin-top:50px;margin-bottom:50px"><p style="text-align:center">假装这里是Instagram header background</p></div>
