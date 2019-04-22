@@ -57,6 +57,7 @@ def handle_photo(src_dir, target_file):
     '''
     file_list = list_img_file(src_dir)
     file_list.sort()
+    file_list.reverse()
     list_info = []
     for i in range(len(file_list)):
         filename = file_list[i]
@@ -89,7 +90,7 @@ def handle_photo(src_dir, target_file):
                                                     }
                         }
             list_info.append(new_dict)
-        elif year_month != list_info[-1]['date']:  # 不是最后的一个日期，就新建一个dict
+        elif year_month != list_info[-1]['date']:  # 不是同一个月，就新建一个dict
             new_dict = {"date": year_month, "arr": {'year': date.year,
                                                     'month': date.month,
                                                     'link': [filename],
@@ -99,12 +100,13 @@ def handle_photo(src_dir, target_file):
                                                     }
                         }
             list_info.append(new_dict)
-        else:  # 同一个日期
+        else:  # 同一个月
             list_info[-1]['arr']['link'].append(filename)
             list_info[-1]['arr']['text'].append(info)
             list_info[-1]['arr']['type'].append(_type)
             list_info[-1]['arr']['size'].append(size)
-    list_info.reverse()  # 翻转
+    
+    list_info.sort()  # 排序
     final_dict = {"list": list_info}
     with open(target_file, "w") as fp:
         json.dump(final_dict, fp, indent=4, separators=(',', ': '))
