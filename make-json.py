@@ -56,8 +56,7 @@ def handle_photo(src_dir, target_file):
     最后将data.json文件存到博客的source/photo文件夹下
     '''
     file_list = list_img_file(src_dir)
-    file_list.sort()
-    file_list.reverse()
+    file_list.sort(reverse=True)
     list_info = []
     for i in range(len(file_list)):
         filename = file_list[i]
@@ -106,7 +105,7 @@ def handle_photo(src_dir, target_file):
             list_info[-1]['arr']['type'].append(_type)
             list_info[-1]['arr']['size'].append(size)
     
-    list_info.sort()  # 排序
+    # list_info = sorted(list_info, key = lambda emp:emp['date'])  # 排序
     final_dict = {"list": list_info}
     with open(target_file, "w") as fp:
         json.dump(final_dict, fp, indent=4, separators=(',', ': '))
