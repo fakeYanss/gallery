@@ -181,12 +181,16 @@
               minSrc = minSrc + "." + type;
               type = "image";
             }
-            // var random = Math.floor(Math.random() * figureClass.length);
-            // I like 'willow' now.
+            var random = Math.floor(Math.random() * figureClass.length);
+            // I like 'willow' now. 33
+            // My baby was born at May 20th. Everything become colorful.
+            var time = new Date('2020-05-20').getTime();
+            var now = new Date(src.split('_')[0]).getTime();
+
 
             liTmpl +=
               '<figure class="thumb ' +
-              figureClass[33] +
+              figureClass[now > time ? random : 33] +
               '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' +
               src +
@@ -232,30 +236,6 @@
         var arr = str.split("/");
         return "/assets/ins/" + arr[arr.length - 1];
       };
-
-      // var ctrler = function ctrler(data) {
-      //   var imgObj = {};
-      //   for (var i = 0, len = data.length; i < len; i++) {
-      //     var y = data[i].y;
-      //     var m = data[i].m;
-      //     var src = replacer(data[i].src);
-      //     var text = data[i].text;
-      //     var key = y + "" + ((m + "").length == 1 ? "0" + m : m);
-      //     if (imgObj[key]) {
-      //       imgObj[key].srclist.push(src);
-      //       imgObj[key].text.push(text);
-      //     } else {
-      //       imgObj[key] = {
-      //         year: y,
-      //         month: m,
-      //         srclist: [src],
-      //         text: [text]
-      //       };
-      //     }
-      //   }
-      //   render(imgObj,'photoD')
-      //   render(imgObj,'gameD')
-      // };
 
       function loadData(success, file) {
         if (!searchData) {
