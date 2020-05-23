@@ -190,7 +190,7 @@
 
             liTmpl +=
               '<figure class="thumb ' +
-              figureClass[now > time ? random : 33] +
+              figureClass[now >= time ? random : 33] +
               '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' +
               src +
