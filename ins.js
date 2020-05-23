@@ -181,16 +181,17 @@
               minSrc = minSrc + "." + type;
               type = "image";
             }
+
             var random = Math.floor(Math.random() * figureClass.length);
             // I like 'willow' now. 33
             // My baby was born at May 20th. Everything become colorful.
             var time = new Date('2020-05-20').getTime();
-            var now = new Date(src.split('_')[0]).getTime();
-
+            var now = new Date(src.substring(src.lastIndexOf('/') + 1).split('_')[0]).getTime();
+            var index = (now >= time ? random : 33);
 
             liTmpl +=
               '<figure class="thumb ' +
-              figureClass[now >= time ? random : 33] +
+              figureClass[index] +
               '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' +
               src +
