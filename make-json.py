@@ -29,13 +29,13 @@ def list_img_file(directory):
     tmp_list = set()
 
     for filename in old_list:
-        name, fileformat = filename.split(".")
+        name, fileformat = filename.rsplit(".", 1)
         if fileformat.lower() == "jpg" or fileformat.lower() == "mp4" or \
            fileformat.lower() == "webm":
             tmp_list.add(name)
 
     for filename in old_list:
-        name, fileformat = filename.split(".")
+        name, fileformat = filename.rsplit(".", 1)
         if fileformat.lower() == "jpg" or fileformat.lower() == "mp4" or \
            fileformat.lower() == "webm":
             if name in tmp_list:
