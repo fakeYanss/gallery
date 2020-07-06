@@ -62,7 +62,7 @@ def handle_photo(src_dir, target_file):
         filename = file_list[i]
         print(filename.encode("utf-8"))
         date_str, info = filename.split("_")
-        info, _type = info.split(".")
+        info, _type = info.rsplit(".", 1)
         date = datetime.strptime(date_str, "%Y-%m-%d")
         year_month = date_str[0:7]
         if _type == "mp4" or "webm":
@@ -78,7 +78,7 @@ def handle_photo(src_dir, target_file):
                 size = str(height) + "x" + str(width)
             else:
                 size = str(width) + "x" + str(height)
-        filename, _ = file_list[i].split(".")
+        filename, _ = file_list[i].rsplit(".", 1)
         if i == 0:  # 处理第一个文件
             new_dict = {"date": year_month, "arr": {'year': date.year,
                                                     'month': date.month,
