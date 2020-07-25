@@ -1,5 +1,5 @@
 # Blog_Album
-* 博客的相册源文件
+* 博客的相册源文件，go to [my album](https://foreti.me/gallery/)
 * 文件夹结构:
 ```
 ├─game
@@ -9,8 +9,7 @@
 │ ├─min_pic       压缩后的缩略图
 │ └─pic           原图
 ├─appveyor.yml    CI脚本
-├─compress.py     压缩脚本
-└─make-json.py    生成json脚本
+└─build.py        缩略图和生成json脚本
 ```
 
 * 图片或视频名格式为`2019-01-01_xxxxxx`

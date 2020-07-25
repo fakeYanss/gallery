@@ -1,13 +1,87 @@
 # coding: utf-8
-# from PIL import Image
-import os
+# from PIL import Imageimport os
 import sys
+import json
+from PIL import Image
+from PIL.ExifTags import TAGS
 import json
 import numpy
 import cv2
 from datetime import datetime
-from PIL import Image
 
+
+'''
+解决裁剪压缩后的图片Orientation信息不正确问题
+'''
+def get_exif(im_obj):
+    info = im_obj._getexif()
+    ret = dict()
+    if info:
+        for tag, value in info.items():
+            decoded = TAGS.get(tag, tag)
+            ret[decoded] = value
+    return ret
+
+def get_rotate_degree(im_obj):
+    degree = 0
+    if hasattr(im_obj, '_getexif'):
+        info = im_obj._getexif()
+        ret = dict()
+        degree_dict = {1: 0, 3: 180, 6: -90, 8: 90}
+        if info:
+            orientation = info.get(274, 0)
+            degree = degree_dict.get(orientation, 0)
+    return degree
+
+def get_crop_region(width, height):
+    if width < height:
+        left = 0
+        upper = (height - width) / 2
+        right = width
+        lower = upper + width
+    elif width > height:
+        left = (width - height) / 2
+        upper = 0
+        right = left + height
+        lower = height
+    else:
+        left = 0
+        upper = 0
+        right = width
+        lower = height
+    return (left, upper, right, lower)
+
+def list_new_img_file(directory):
+    """列出目录下所有文件，并筛选出图片文件列表返回"""
+    old_list = os.listdir(directory)
+    # print old_list
+    new_list = []
+    for filename in old_list:
+        name, fileformat = filename.rsplit(".", 1)
+        if name.startswith('new_') and fileformat.lower() == "jpg":
+            # if fileformat.lower() == "jpg" or fileformat.lower() == "png" or fileformat.lower() == "gif":
+            os.rename(directory + filename, directory + filename.strip('new_'))
+            filename = filename.strip('new_')
+            new_list.append(filename)
+    # print new_list
+    return new_list
+
+def generateThumbnail(src_dir, des_dir):
+    if not os.path.exists(src_dir):
+        os.makedirs(src_dir)
+    if not os.path.exists(des_dir):
+        os.makedirs(des_dir)
+    file_list = list_new_img_file(src_dir)
+    if file_list:
+        for infile in file_list:
+            im = Image.open(src_dir+infile)
+            im = im.rotate(get_rotate_degree(im))
+            get_crop_region(im.size[0], im.size[1])
+            copy = im.crop(get_crop_region(im.size[0], im.size[1]))
+            copy.thumbnail((600, 600))
+            copy.save(des_dir+infile, 'JPEG')
+            print("successfully compress")
+            # print("successfully compress " + infile) # appveyor编码utf8报错
 
 def get_rotate_degree(im_obj):
     degree = 0
@@ -47,7 +121,6 @@ def list_img_file(directory):
                     new_list.append(filename)
     # print(new_list)
     return new_list
-
 
 def handle_photo(src_dir, target_file):
     '''根据图片的文件名处理成需要的json格式的数据
@@ -112,6 +185,8 @@ def handle_photo(src_dir, target_file):
     # with open(target_file, "r") as fp:
         # print (json.load(fp)) # appveyor上进行打印会由于utf8发生编码错误
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    generateThumbnail('photo/pic/', 'photo/min_pic/')
+    generateThumbnail('game/pic/', 'game/min_pic/')
     handle_photo('photo/pic/', 'photo.json')
     handle_photo('game/pic/', 'game.json')
