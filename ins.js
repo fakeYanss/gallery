@@ -161,11 +161,11 @@
             // var minSrc = "http://photo.yanss.top/min_photos/" + data.link[i];
             // var src = "http://photo.yanss.top/" + data.link[i];
             if (tagName == 'photoD') {
-              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/source/photo/min_pic/" + data.link[i];
-              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/source/photo/pic/' + data.link[i];
+              var minSrc = "https://foreti.me/imgplace/gallery/photo/min_pic/" + data.link[i];
+              var src = 'https://foreti.me/imgplace/gallery/photo/pic/' + data.link[i];
             } else {
-              var minSrc = "https://raw.githubusercontent.com/fakeYanss/gallery/source/game/min_pic/" + data.link[i];
-              var src = 'https://raw.githubusercontent.com/fakeYanss/gallery/source/game/pic/' + data.link[i];
+              var minSrc = "https://foreti.me/imgplace/gallery/game/min_pic/" + data.link[i];
+              var src = 'https://foreti.me/imgplace/gallery/game/pic/' + data.link[i];
             }
             var type = data.type[i];
             var target = src + "." + type;
@@ -242,7 +242,7 @@
         if (!searchData) {
           var xhr = new XMLHttpRequest();
           // xhr.open("GET", "./" + file + "?t=" + +new Date(), true);
-          xhr.open("GET", "https://raw.githubusercontent.com/fakeYanss/gallery/source/" + file + "?t=" + new Date(), true);
+          xhr.open("GET", "https://foreti.me/imgplace/gallery/" + file + "?t=" + new Date(), true);
           xhr.onload = function() {
             if (this.status >= 200 && this.status < 300) {
               var res = JSON.parse(this.response);
