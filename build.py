@@ -2,6 +2,7 @@
 # from PIL import Imageimport os
 import sys
 import json
+import os
 from PIL import Image
 from PIL.ExifTags import TAGS
 import json
