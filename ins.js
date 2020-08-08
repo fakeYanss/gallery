@@ -191,7 +191,8 @@
 
             liTmpl +=
               '<figure class="thumb ' +
-              figureClass[index] +
+              //figureClass[index] +
+              'filter-aden' +
               '" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' +
               src +
